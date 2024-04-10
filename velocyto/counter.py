@@ -279,8 +279,6 @@ class ExInCounter:
                         chrom = chrom.split("_")[1]
                     else:
                         chrom = chrom[3:]
-                        if chrom == "M":
-                            chrom = "MT"
                 pos = read.reference_start + 1  # reads in pysam are always 0-based, but 1-based is more convenient to wor with in bioinformatics
                 segments, ref_skipped, clip5, clip3 = self.parse_cigar_tuple(read.cigartuples, pos)
                 if segments == []:
